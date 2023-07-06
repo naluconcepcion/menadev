@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>Painting</title>
+        <link rel='stylesheet' href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <h1>Paint App</h1>
+        <div class='color-picker'>
+          <div class="color" id="selected"></div>
+          <div class="color" style="background-color:white;" onclick="changeColor(this);"></div>
+          <div class="color" style="background-color:black;" onclick="changeColor(this);"></div>
+          <div class="color" style="background-color:#1abc9c;" onclick="changeColor(this);"></div>
+          <div class="color" style="background-color:#2ecc71;" onclick="changeColor(this);"></div>
+          <div class="color" style="background-color:#006266;" onclick="changeColor(this);"></div>
+          <div class="color" style="background-color:rgb(41, 128, 185);" onclick="changeColor(this);"></div>
+          <div class="color" style="background-color:rgb(192, 57, 43);" onclick="changeColor(this);"></div>
+          <div class="color" style="background-color:rgb(241, 196, 15);" onclick="changeColor(this);"></div>
+          <div class="color" style="background-color:#9980FA;" onclick="changeColor(this);"></div>
+          <div class="color" style="background-color:#9AECDB;" onclick="changeColor(this);"></div>
+          <div class="color" style="background-color:#0652DD;" onclick="changeColor(this);"></div>
+          <div class="color" style="background-color:#1B9CFC;" onclick="changeColor(this);"></div>
+          <div class="color" style="background-color:yellowgreen;" onclick="changeColor(this);"></div>
+          <div class="color" style="background-color:#9900ff;" onclick="changeColor(this);"></div>
+          <div class="color" style="background-color:rgb(195, 34, 101);" onclick="changeColor(this);"></div>
+          <!-- Add three more colors below this line! Add in regular text, one using a hex code, and one using RGB. -->
+        </div>
+        <button id='clearBtn' onclick="clearCanvas();">Clear Canvas</button>
+        <div id='artboard'>
+
+        </div>
+        <script>
+            var artboard = document.getElementById('artboard');
+            function addBoxes(){
+                for (var i=0; i<800; i++) {
+                    // what happens when the code underneath this line runs? 
+                    artboard.innerHTML += "<div class='box' onclick='fillArtboard(this);'></div>";
+                }
+            }
+            addBoxes();
+
+            // what is the selectedColor variable doing? 
+            var selectedColor = 'red';
+
+            function fillArtboard(box) {
+                box.style.backgroundColor = selectedColor;
+                box.style.borderColor = selectedColor;
+            }
+
+            function changeColor(colorBox) {
+                selectedColor = colorBox.style.backgroundColor;
+                document.getElementById('selected').style.backgroundColor = selectedColor;
+            }
+
+            function clearCanvas() {
+                artboard.innerHTML = "";
+                addBoxes();
+            }
+        </script>
+    </body>
+</html>
