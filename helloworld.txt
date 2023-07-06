@@ -1,1 +1,6 @@
-mena was here
+1. When we make any changes, we can see the status immediately using `git status`. 
+2. When we want to add a new file, we can do so using `git add <filename>`.
+3. To make sure our changes are saved, we do `git commit -m "commit message to explain what changed"`
+4. To finalize changes, we do `git push`. 
+
+If you have any files you want to remove, you can remove them from the folder itself on your local machine, and then do the same process. 
