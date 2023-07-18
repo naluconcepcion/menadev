@@ -1,0 +1,20 @@
+import random
+import turtle
+screen = turtle.Screen()
+screen.colormode(255)
+t = turtle.Turtle()
+t.shape("turtle")
+t.color("green")
+for i in range(50):
+    x=random.randint(-200,0)
+    y=random.randint(0,200)
+    t.penup()
+    t.goto(x,y)
+    t.pendown()
+    t.color(random.randint(0,255),random.randint(0,255),random.randint(0,255))
+    for i in range(4):
+        t.pendown()
+        t.forward(100)
+        t.right(90)
+        t.penup()
+screen.exitonclick()
