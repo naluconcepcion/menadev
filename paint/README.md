@@ -3,3 +3,4 @@ This is a painting tool. You select the color you want and you can draw. There i
 
 # Skills learned from this project
 I've learned many new skills over the course of this project. I have learned:
+* 

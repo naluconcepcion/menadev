@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <title>Alarm clock</title>
+        <!-- The line below is linking the custom stylesheet we set up for the 
+            alarm. -->
+        <link rel="stylesheet" href="alarm.css">
+        <!-- This links the font stylesheet; this is totally separate from the 
+            formatting sheet above, and if you notice, uses a website link 
+            rather than a file. -->
+        <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+    </head>
+    <body>
+        <!-- A "div" is a type of tag which represents a "box" or a section
+            of a website. We will see more divs as we continue building
+            websites of our own moving forward.  -->
+            <!-- It is possible to have as many divs nested within one 
+                another as you would like. -->
+        <div id="scene">
+            <p id="timer"></p>
+            <div id="container">
+                <!-- This is a comment in HTML! -->
+                <!-- What should we write below to cancel the alarm? -->
+                <button id="btn1" onclick= "cancel();">Cancel Alarm</button>
+                <button id="btn2" onclick="restart();">Restart Alarm</button>
+            </div>
+            <!-- The tag below is called an img tag. It has two parameters, 
+                id and src. Id is used by the CSS and JavaScript to identify
+                which parts of the HTML file to "grab" and interact with; 
+                recall CSS styles the element, whilst JS makes it interactive.
+                 -->
+            <!-- Take a look around the folder of code you have. What do you think
+                    we should write in the src section to include the visual
+                    of the alarm clock? -->
+            <img id="clock" src="clock.png">
+        </div>
+       <!-- What do you think this line does? -->
+        <audio id='alarm' src="alarm.mp3"></audio>
+        <script>
+            // a "script" tag is, generally speaking, a place where programmers
+            // can put in some JavaScript in their HTML 
+
+            // recall that a function is a "reusable" chunk of code! 
+            // to use the code inside, we call the function by name.
+            function alarm(){
+                clearInterval(interval);
+                document.getElementById('clock').src = 'alarm.gif';
+                alert("Time is up");
+            }
+          
+            var time = prompt("Enter time in seconds:");
+            
+            // what does this function do?
+            function ticktock(){
+                time = time - 1;
+                // an "element" is some section of the HTML code 
+                document.getElementById("timer").innerHTML = time;
+            }
+            
+            var interval = setInterval(ticktock, 1000);
+
+            // a timeout is an interval of time during which the HTML will 
+            // simply say the website has "timed out" (you may have seen this 
+            // if your internet connection ever went down and you couldn't 
+            // reach a website for a while).
+
+            // setTimeout is a built-in function of JavaScript, which is why
+            // you don't see it defined anywhere here 
+            var timeout = setTimeout(alarm, time*1000);
+          
+            function cancel(){
+                  clearTimeout(timeout);
+                  clearInterval(interval);
+            }
+
+            function restart(){
+                  location.reload();
+            }
+        </script>
+    </body>
+</html>
