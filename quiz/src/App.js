@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
-import {useState} from 'react';
-import {useEffect} from 'react';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -39,142 +39,93 @@ function App() {
           answerText: "13", isCorrect: false
         }
       ]
-  },
-  {
-    questionText: "Which is the only fruit that doesn't ripen after it's picked?",
-    answerOptions: [
-      {
-        answerText: "Apple", isCorrect: false
-      },
-      {
-        answerText: "Orange", isCorrect: false
-      },
-      {
-        answerText: "Pineapple", isCorrect: true
-      },
-      {
-        answerText: "Strawberry", isCorrect: false
-      }
-    ]
-  } 
-];
-  const [showAnswerAIsCorrect, setShowAnswerAIsCorrect] = useState(false);
-  const [showAnswerBIsCorrect, setShowAnswerBIsCorrect] = useState(false);
-  const [showAnswerCIsCorrect, setShowAnswerCIsCorrect] = useState(false);
-  const [showAnswerDIsCorrect, setShowAnswerDIsCorrect] = useState(false);
-
-  const [questionHasBeenAnswered, setQuestionHasBeenAnswered] = useState([false, false, false]);
-
-useEffect(() => {
-  console.log(count);
-  increaseByOne();
-  console.log(count)
-}, [])
-
-const evaluateChoice = (answerOption, isCorrect, questionIndex) => {
-  // when the button is clicked, show whether or not the answer is correct 
-console.log ("here")
-  // check all of A, B, C, D 
-  // define the set show answer for each one 
-  // create hte variable for each one
-  // choose which variable to use as a comparison depending on if you're clicking answer a, b, c, or d
-  if(answerOption === "A")
-   {
-    setShowAnswerAIsCorrect(true);
-    setQuestionHasBeenAnswered((questionHasBeenAnswered)=>(questionHasBeenAnswered[questionIndex]=true))
-  } 
- 
-  if(answerOption === "B") {
-    setShowAnswerBIsCorrect(true);
-    setQuestionHasBeenAnswered((questionHasBeenAnswered)=>(questionHasBeenAnswered[questionIndex]=true))
-  } 
-  
-  if(answerOption === "C") {
-    setShowAnswerCIsCorrect(true);
-    setQuestionHasBeenAnswered((questionHasBeenAnswered)=>(questionHasBeenAnswered[questionIndex]=true))
-  } 
-  
-  if(answerOption === "D") {
-    setShowAnswerDIsCorrect(true);
-    setQuestionHasBeenAnswered((questionHasBeenAnswered)=>(questionHasBeenAnswered[questionIndex]=true))
-  } 
-}
-
-const increaseByOne = () => {
-  const newCount = count + 1;
-  setCount(newCount);
-  console.log(count)
-}
-return (
-  <div className="App">
-    <p>Quiz</p>
-    <header className="App-header">
-     
-      {
-        
-        questions.map((data,index)=>
-        <div>
-          <p>{data.questionText}</p>
-          <div className="answerRow">
-          <button key={index} onClick = {()=>evaluateChoice("A", data.answerOptions[0].isCorrect, index)}>A</button>
-          {
-            (showAnswerAIsCorrect && questionHasBeenAnswered[0]) && 
-              (
-                (data.answerOptions[0].isCorrect) ?
-                (<p>Your answer is correct: </p>) :
-                (<p>Your answer is incorrect: </p>)
-                )
-                
-          }
-        <p key={index}>{data.answerOptions[0].answerText}</p>
-        </div>
-        <div className="answerRow">
-        <button key={index} onClick = {()=>evaluateChoice("B", data.answerOptions[1].isCorrect, index)}>B</button>
+    },
+    {
+      questionText: "Which is the only fruit that doesn't ripen after it's picked?",
+      answerOptions: [
         {
-            showAnswerBIsCorrect && 
-              (
-                data.answerOptions[1].isCorrect ?
-                (<p>Your answer is correct: </p>) :
-                (<p>Your answer is incorrect: </p>)
-                )
-                
-          }
-        <p key={index}>{data.answerOptions[1].answerText}</p> 
-        </div>
-        <div className="answerRow">
-        <button key={index} onClick = {()=>evaluateChoice("C", data.answerOptions[2].isCorrect, index)}>C</button>
+          answerText: "Apple", isCorrect: false
+        },
         {
-            showAnswerCIsCorrect && 
-              (
-                data.answerOptions[2].isCorrect ?
-                (<p>Your answer is correct: </p>) :
-                (<p>Your answer is incorrect: </p>)
-                )
-                
-          }
-        <p key={index}>{data.answerOptions[2].answerText}</p> 
-        </div>
-        <div className="answerRow">
-        <button key={index} onClick = {()=>evaluateChoice("D", data.answerOptions[3].isCorrect, index)}>D</button>
+          answerText: "Orange", isCorrect: false
+        },
         {
-            showAnswerDIsCorrect && 
-              (
-                data.answerOptions[3].isCorrect ?
-                (<p>Your answer is correct</p>) :
-                (<p>Your answer is incorrect</p>)
-                )
-                
-          }
-        <p key={index}>{data.answerOptions[3].answerText}</p> 
-        </div>
-        </div> 
-        )
-      }
-     
-    </header>
-    <p>By: Mena</p>
-  </div>
-);
+          answerText: "Pineapple", isCorrect: true
+        },
+        {
+          answerText: "Strawberry", isCorrect: false
+        }
+      ]
+    }
+  ];
+  // const [showAnswerAIsCorrect, setShowAnswerAIsCorrect] = useState(false);
+  // const [showAnswerBIsCorrect, setShowAnswerBIsCorrect] = useState(false);
+  // const [showAnswerCIsCorrect, setShowAnswerCIsCorrect] = useState(false);
+  // const [showAnswerDIsCorrect, setShowAnswerDIsCorrect] = useState(false);
+
+  // const [questionHasBeenAnswered, setQuestionHasBeenAnswered] = useState([false, false, false]);
+  const [questionStates, setQuestionStates] = useState(
+    questions.map(() => ({
+      showAnswerIsCorrect: [false, false, false, false],
+      questionHasBeenAnswered: false
+    }))
+  );
+
+  const evaluateChoice = (answerOption, isCorrect, questionIndex) => {
+    // when the button is clicked, show whether or not the answer is correct 
+    const newQuestionStates = [...questionStates]; // this is how we make a copy of the state without modifying it directly 
+    const newQuestionState = { ...newQuestionStates[questionIndex]}; // this gets the particular state 
+    // first: set the appropriate answer to show 
+    const answerIndex = 0; // if none of the below are true, then we never reassign - so we have selected A by default
+    if(answerOption == "B") {
+      answerIndex = 1;
+    }
+    else if(answerOption == "C") {
+      answerIndex = 2;
+    }
+    else if(answerOption == "D") {
+      answerIndex = 3;
+    }
+
+    newQuestionState.showAnswerIsCorrect[answerIndex] = true;
+    // second: set questionHasBeenAnswered to true 
+    newQuestionState.questionHasBeenAnswered = true;
+
+    // make the reassignment 
+    setQuestionStates(newQuestionState);
+  }
+
+  return (
+    <div className="App">
+      <p>Quiz</p>
+      <header className="App-header">
+        {
+          questions.map((data, index) =>
+            <div key={index}>
+              <p>{data.questionText}</p>
+              {data.answerOptions.map((answer, answerIndex) => (
+                <div className="answerRow" key={answerIndex}>
+                  <button onClick={() => evaluateChoice(String.fromCharCode(65+answerIndex), answer.isCorrect, index)}>
+                    {String.fromCharCode(65+answerIndex)}
+                  </button>
+                  {questionStates[index].showAnswerIsCorrect[answerIndex] && 
+                  questionStates[index].questionHasBeenAnswered && (
+                    <p>
+                      Your answer is {" "}
+                    {answer.isCorrect ? "correct" : "incorrect"}
+                    </p>
+                  )}
+                  <p>{answer.answerText}</p>
+                </div>
+              ))}
+            </div>
+          )
+        }
+
+      </header>
+      <p>By: Mena</p>
+    </div>
+  );
 }
 
 export default App;
