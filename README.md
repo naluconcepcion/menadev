@@ -2,7 +2,7 @@
 
 Hi everyone! My name is Mena, and I'm an aspiring software developer.
 
-I've been coding for the last 11 months, and I've worked on the projects below. To see more about what I've learned from each one and questions I still have, open the folders and see their respective README.md files for more. 
+I've been coding for the last 12 months, and I've worked on the projects below. To see more about what I've learned from each one and questions I still have, open the folders and see their respective README.md files for more. 
 
 # Past Projects
 Over the past 12 months, I have created:
