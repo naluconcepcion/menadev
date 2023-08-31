@@ -70,5 +70,64 @@ Here is a full timeline of everything I've learned in that time:
 - Explored wireframes and design polish using Figma, incorporating key UI elements into my design.
 - Homework: Set up a template for a quiz app.
 
+# Learning Progress Summary
+
+## September 10, 2022:
+- Reviewed Python Turtle basics:
+  - Library imports
+  - Loops
+  - Turtle motion
+  - Lists
+  - Variables
+- Emphasized the importance of understanding code and using online resources.
+- Homework: Read an article on Python Turtle random walk.
+
+## September 17, 2022:
+- Reviewed Python Turtle random walk homework and clarified confusion.
+- Set up local coding environment: Git, Visual Studio Code, Python3.
+- Replicated project using Repl.it and ran it locally.
+- Learned about command-line GitHub login setup.
+- Homework: Create a filled square using Turtle and review relevant documentation.
+
+## October 16, 2022:
+- Reviewed square drawing homework.
+- Explored functions and function calls, understanding their importance.
+- Discussed the concept of a backend web app project.
+- Homework: Write and call a function to reset the turtle and screen.
+
+## October 30, 2022:
+- Reviewed turtle and screen reset homework.
+- Delved into nested loops and conditional logic.
+- Introduced the idea of a backend web app project.
+- Homework: Tasks involving turtle spawning and a turtle racing game.
+
+## November 9, 2022:
+- Reviewed turtle spawning and racing game homework.
+- Gained deeper understanding of functions and conditional statements.
+- Introduced to Flask for backend web app development.
+- Homework: Watched videos on backend and frontend web development.
+
+## November 25, 2022:
+- Reviewed web development videos.
+- Discussed projects, portfolio, and GitHub setup.
+- Planned a Flask-based web app project.
+- Homework: Created a design specification for project, prepared questions for Dr. Zufelt.
+
+## April 12, 2023:
+- Focused on design concepts and planning.
+- Learned about design specifications and React fundamentals.
+- Explored building a project portfolio and reaching out to Dr. Zufelt.
+
+## May 26, 2023:
+- Discussed project ideas and planning for a web app.
+- Further understood design specifications and wireframes using Figma.
+- Emphasized the importance of a well-structured portfolio.
+- Excited to showcase coding interest and work on the web app project.
+
+## May 31, 2023:
+- Refined design specification and explored wireframes using Figma.
+- Grasped the significance of a structured portfolio.
+- Motivated to present coding interest and progress on web app project.
+
 # Tools and Frameworks
 I’ve learned to work with several frameworks since I started coding independently. My strongest language is currently OOP Python, and I also have exposure to React (for frontend tooling) and Flask.
