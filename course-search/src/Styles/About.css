@@ -1,0 +1,17 @@
+.about-parent {
+    background-color: #8CA0D7;
+    padding: 40px;
+    border: 1px solid red;
+    display: flex; /*by default, lays things out horizontally*/
+    flex: 1;
+}
+
+.left-menu {
+    border: 5px solid green;
+}
+
+.welcome-content {
+    border: 5px solid blue;
+    display: flex;
+    flex: 1;
+}
