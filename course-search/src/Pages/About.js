@@ -6,6 +6,7 @@ import '../Styles/About.css';
 function About() {
   return (
     <div className="about-parent">
+      <div className = "about-content">
       <div className="left-menu">
         <img src={menuicon} style={{
           width: 50,
@@ -35,7 +36,8 @@ function About() {
           height: 100
         }}/>
       </div>
-    </div>
+      </div>
+      </div>
   );
 }
 // how will the viewer be able to tell that course search is the main project we want them to look at

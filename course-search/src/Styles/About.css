@@ -1,18 +1,21 @@
 .about-parent {
     background-color: #8CA0D7;
-    padding: 40px;
-    border: 1px solid red;
-    display: flex; /*by default, lays things out horizontally*/
+    /* padding: 40px; */
+    width: "100%";
+    height: "100%";
     flex: 1;
+}
+.about-content {
+    flex-grow: 1;
+    flex: 1;
+    display: flex;
 }
 
 .left-menu {
-    border: 5px solid green;
+    
 }
 
 .welcome-content {
-    border: 5px solid blue;
-    display: flex;
     flex: 1;
 }
 
