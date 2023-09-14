@@ -1,5 +1,7 @@
 import React from 'react';
 import girl from '../Assets/girl-studying.jpg';
+import '../Styles/Welcome.css';
+
 
 function Welcome() {
     return (
