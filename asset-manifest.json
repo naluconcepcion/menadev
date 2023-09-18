@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/menadev/static/css/main.1ff73c66.css",
-    "main.js": "/menadev/static/js/main.0a81557d.js",
+    "main.css": "/menadev/static/css/main.f6f80393.css",
+    "main.js": "/menadev/static/js/main.207d94c7.js",
     "static/js/787.8a400665.chunk.js": "/menadev/static/js/787.8a400665.chunk.js",
     "static/media/profpic.jpg": "/menadev/static/media/profpic.18d7731e5757d4b61749.jpg",
     "static/media/girl-studying.jpg": "/menadev/static/media/girl-studying.7d6b87204f31b2fa247a.jpg",
     "static/media/menuicon.png": "/menadev/static/media/menuicon.a457b5efcb1da23d98d5.png",
     "index.html": "/menadev/index.html",
-    "main.1ff73c66.css.map": "/menadev/static/css/main.1ff73c66.css.map",
-    "main.0a81557d.js.map": "/menadev/static/js/main.0a81557d.js.map",
+    "main.f6f80393.css.map": "/menadev/static/css/main.f6f80393.css.map",
+    "main.207d94c7.js.map": "/menadev/static/js/main.207d94c7.js.map",
     "787.8a400665.chunk.js.map": "/menadev/static/js/787.8a400665.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1ff73c66.css",
-    "static/js/main.0a81557d.js"
+    "static/css/main.f6f80393.css",
+    "static/js/main.207d94c7.js"
   ]
 }
