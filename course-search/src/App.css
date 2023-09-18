@@ -1,5 +1,5 @@
 .App {
+  display: flex;
   height: 800px;
   border: 1px solid black;
-  background-color: #8CA0D7;
 }

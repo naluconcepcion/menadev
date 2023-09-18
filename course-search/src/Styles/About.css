@@ -5,14 +5,20 @@
     height: "100%";
     flex: 1;
 }
+
+.left-menu {
+    
+}
+
 .about-content {
     flex-grow: 1;
     flex: 1;
     display: flex;
+    border: 1px solid red;
 }
 
 .left-menu {
-    
+
 }
 
 .welcome-content {
